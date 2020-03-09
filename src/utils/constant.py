@@ -1,3 +1,2 @@
 ORIGINAL = 'Background'
-MASK = 'aRPD Pixel Cluster'
-PENETRATION = 'Pen'
+MASK = '<PSD layer name for mask>'
