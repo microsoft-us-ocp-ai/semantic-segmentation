@@ -1,12 +1,16 @@
 # Semantic segmentation
 
-This repo contains notebooks for pixel-wise segmentation on images to localize a region of interest (ROI) using U-NET. The initial input data format is Photoshop files, where there is a layer for the original image and a layer for the ROI mask.
+This repo contains notebooks for pixel-wise segmentation on images to localize a region of interest (ROI) using U-NET. 
 
 Note: You will need a .env file at the root of your project with appropriate environment variables for the filepaths used throughout this repo. 
 
 ## Load data
 
-We first load in the data from .psd files to extract each layer, compose our masks, and save the resulting image and mask pairs into an output location as numPy arrays. Here, we have labeled ROI pixels as 1s and all other pixels as 0s in our masks.  The output directory structure is 2 parallel directories, one that contains the images, and one that contains the masks, where the image and mask both have the same filename in their respective directories.  If your data does not come from .psd files, you can sustitute your own logic for creating these parallel folders for your images and masks. This structure will allow you to proceed to slicing images.
+The initial input data format is Photoshop (.psd) files, where there is a layer for the original image and a layer for the ROI mask. Regardless of your data format, you can still leverage the remaining notebooks for your scenario. 
+
+We first load in the data from .psd files to extract each layer, compose our masks, and save the resulting image and mask pairs into an output location as numPy arrays. Here, we have labeled ROI pixels as 1s and all other pixels as 0s in our masks. The output directory structure is 2 parallel directories, one that contains the images, and one that contains the masks, where the image and mask both have the same filename in their respective directories.  
+
+If your data does not come from .psd files, you can sustitute your own logic for creating these parallel folders for your images and masks. This structure will allow you to proceed to slicing images.
 
 Note: You will need to modify the [constants](https://github.com/laurentran/segmentation/blob/master/src/utils/constant.py) with the name of your layer that represents the image mask. 
 
