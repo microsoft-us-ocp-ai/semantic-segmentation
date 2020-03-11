@@ -20,6 +20,8 @@ Note: You will need to modify the [constants](https://github.com/laurentran/segm
 
 Next, with large images (in our case 6000x4000 pixels), we need to slice the images into smaller patches to train the network.  We similarly save the sliced images and masks into two folders, where the image and its associated mask have the same filename under two parallel folders.  We found that 128x128 patches worked well in our case.
 
+[NOTE] If when saving the image slices, you get a permission denied error (this will happen if you've mounted a data disk to an Azure VM and you are writing to that mounted disk), change permissions on the folder (e.g. 'sudo chown -R $USER:$USER /datadrive')
+
 * Slice images: [slice-images](https://github.com/laurentran/segmentation/blob/master/notebooks/slice-images.ipynb)
 
 [OPTIONAL] Where there is high class imbalance (in cases where there are many more 0s than 1s, or in other words, where the ROI you wish to localize has a small proportion of pixels to background), it is effective to filter out a subset of image patches where there is no signal (no 1s). 
